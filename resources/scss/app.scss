@@ -1,0 +1,82 @@
+$body-bg: #f5f8fa;
+
+// Borders
+$laravel-border-color: darken($body-bg, 10%);
+$list-group-border: $laravel-border-color;
+$navbar-default-border: $laravel-border-color;
+$panel-default-border: $laravel-border-color;
+$panel-inner-border: $laravel-border-color;
+
+// Brands
+$brand-primary: #3097d1;
+$brand-info: #8eb4cb;
+$brand-success: #2ab27b;
+$brand-warning: #cbb956;
+$brand-danger: #bf5329;
+
+// Typography
+$font-family-sans-serif: 'Raleway', sans-serif;
+$font-size-base: 14px;
+$line-height-base: 1.6;
+$text-color: #636b6f;
+
+// Navbar
+$navbar-default-bg: #fff;
+
+// Buttons
+$btn-default-color: $text-color;
+
+// Inputs
+$input-border: lighten($text-color, 40%);
+$input-border-focus: lighten($brand-primary, 25%);
+$input-color-placeholder: lighten($text-color, 30%);
+
+// Panels
+$panel-default-heading-bg: #fff;
+
+@import '../../node_modules/bulma/bulma';
+
+body {
+    background: $body-bg;
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+}
+
+header {
+    background: #fff;
+    padding: 2rem;
+
+    display: flex;
+    //justify-content: space-between;
+}
+
+nav {
+    width: 100%;
+
+
+    ul {
+        padding: 0;
+        margin: 0;
+
+        display: flex;
+        justify-content: flex-end;
+
+        li {
+            list-style-type: none;
+            margin: 0 2rem;
+
+            a {
+                text-decoration: none;
+                padding: .4rem;
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+main {
+
+}
+
+
