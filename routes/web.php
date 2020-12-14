@@ -15,4 +15,6 @@
 
 $router->get('/', 'FrontController@index');
 
+$router->get('post/{id}', 'FrontController@post');
+
 $router->get('api/posts', 'PostsController@index');

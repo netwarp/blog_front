@@ -10,52 +10,54 @@
 </template>
 
 <script>
-    import axios from 'axios'
+import axios from 'axios'
+import Post from './Post';
+export default {
+    name: 'App',
 
-    import Post from './Post'
+    props: [
 
-    export default {
-        name: 'App',
+    ],
 
-        components:[
+    mounted() {
+        this.fetchPosts()
 
-        ],
-
-        mounted() {
-            this.fetchPosts()
-
-            window.addEventListener('scroll', () => {
-                let current_scroll = window.pageYOffset
-                let limit = document.body.offsetHeight - window.innerHeight
+        window.addEventListener('scroll', () => {
+            let current_scroll = window.pageYOffset
+            let limit = document.body.offsetHeight - window.innerHeight
 
 
-                if (current_scroll === limit) {
-                    this.page++
-                    this.fetchPosts()
-                }
-            });
-        },
+            if (current_scroll === limit) {
+                this.page++
+                this.fetchPosts()
+            }
+        });
+    },
 
-        data() {
-            return {
-                page: 1,
-                last_page: null,
-                posts: []
+    components: {
+        Post
+    },
+
+    data() {
+        return {
+            page: 1,
+            last_page: null,
+            posts: []
+        }
+    },
+
+    methods: {
+        async fetchPosts() {
+            const url = `/api/posts?page=${this.page}`;
+            const response = await axios.get(url)
+            let data = await response.data
+
+            this.last_page = await response.data.meta.last_page
+
+            for (let post of data.data) {
+                this.posts.push(post)
             }
         },
-
-        methods: {
-            async fetchPosts() {
-                const url = `/api/posts?page=${this.page}`;
-                const response = await axios.get(url)
-                let data = await response.data
-
-                this.last_page = await response.data.meta.last_page
-
-                for (let post of data.data) {
-                    this.posts.push(post)
-                }
-            },
-        }
-    }
+    },
+}
 </script>
