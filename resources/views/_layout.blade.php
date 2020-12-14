@@ -11,7 +11,9 @@
     <body>
         <header>
             <div class="logo">
-                LOGO
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo" style="width: 100px;">
+                </a>
             </div>
             <nav>
                 <ul>
@@ -24,6 +26,11 @@
         <main>
             @yield('content')
         </main>
+        <footer>
+            <div class="container">
+
+            </div>
+        </footer>
         <script src="/js/app.js"></script>
     </body>
 </html>
