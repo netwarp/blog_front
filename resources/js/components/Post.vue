@@ -1,9 +1,11 @@
 <template>
-    <div class="card my-3" data-id="{{ id }}">
+    <div class="card my-3" :data-id="id">
         <div class="card-header">
             <div class="card-header-title">
-                <span>{{ created_at }}</span>
-                <span>{{ updated_at }}</span>
+                <a :href="'/post/' + id ">
+                    <span>{{ created_at }}</span>
+                    <span>{{ updated_at }}</span>
+                </a>
             </div>
         </div>
         <div class="card-content" style="white-space: pre-wrap">
@@ -17,10 +19,10 @@
                 </div>
                 <div v-if="meta['og:image']">
                     <a :href="meta['og:url']" target="_blank">
-                        <img :src="meta['og:image']" alt="image link">
+                        <img :src="meta['og:image']" alt="image link" class="">
                     </a>
                 </div>
-                <div v-text="meta['og:description']">
+                <div v-text="meta['og:description']" class="card-footer-item">
 
                 </div>
             </div>
