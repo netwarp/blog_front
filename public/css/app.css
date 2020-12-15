@@ -10163,13 +10163,16 @@ body {
 }
 
 header {
-  background: #fff;
-  padding: 2rem;
+  background: #19191c;
+  padding: 1rem;
   display: flex;
 }
 
 nav {
   width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 nav ul {
   padding: 0;
@@ -10185,4 +10188,5 @@ nav ul li a {
   text-decoration: none;
   padding: 0.4rem;
   font-size: 1.2rem;
+  color: #fff;
 }

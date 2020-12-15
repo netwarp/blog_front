@@ -31,6 +31,11 @@
                         </pre>
                         @endif
                     </div>
+                    <div class="card-footer">
+                        <div class="card-footer-item">
+                            <small>{{ $post->created_at->format('d-m-Y') }}</small>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="column">
